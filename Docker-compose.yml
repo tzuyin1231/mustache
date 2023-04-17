@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:13.2-alpine
+    container_name: 'mustache-demo-db'
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - db-mustache:/var/lib/postgresql/data
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    ports:
+      - "32770:5432"
+volumes:
+  db-mustache:
