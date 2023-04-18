@@ -7,6 +7,6 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   sendgrid:
-    api-key: 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
+    api-key: 
 
 
