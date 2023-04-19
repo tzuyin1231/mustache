@@ -1,0 +1,1 @@
+把sendgrid api-key寫到application.yaml中

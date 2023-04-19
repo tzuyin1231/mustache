@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.io.IOException;
 
 @Controller
 public class EmailController {
@@ -25,7 +24,7 @@ public class EmailController {
         return new ResponseEntity<>("Failed to Send", HttpStatus.NOT_FOUND);
     }
     @PostMapping("/sendHTML")
-    public ResponseEntity<String> sendHTML(@RequestBody EmailRequest emailRequest) throws IOException {
+    public ResponseEntity<String> sendHTML(@RequestBody EmailRequest emailRequest) throws Exception {
         Response response = emailService.sendHTML(emailRequest);
         if(response.getStatusCode()==200||response.getStatusCode()==202)
             return new ResponseEntity<>("Send Successfully", HttpStatus.OK);
