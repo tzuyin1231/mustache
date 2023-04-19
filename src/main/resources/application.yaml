@@ -8,6 +8,5 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   sendgrid:
     api-key:
-  mustache:
-    prefix: /templates/
-    suffix: .mustache
+
+
